@@ -1,7 +1,7 @@
 {
   "name": "react-native-country-code-select",
   "version": "1.0.0",
-  "description": "React Native component to select a phone number based on the country",
+  "description": "React Native component to select a country code",
   "homepage": "https://github.com/SimformSolutionsPvtLtd/react-native-country-code-select.git",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -17,7 +17,7 @@
     "rn"
   ],
   "scripts": {
-    "build": "rm -rf lib && tsc -p .",
+    "build": "rm -rf lib && tsc -p . && cp -R ./src/assets ./lib/ ",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "prepare": "husky install",
     "test": "jest"
