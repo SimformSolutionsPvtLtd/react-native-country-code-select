@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { moderateScale, verticalScale } from '../../theme/Metrics';
+import { moderateScale, verticalScale } from '../../theme';
 
 export default StyleSheet.create({
   name: {
@@ -8,9 +8,12 @@ export default StyleSheet.create({
     marginLeft: verticalScale(10),
   },
   container: {
-    padding: verticalScale(10),
     borderBottomWidth: StyleSheet.hairlineWidth,
+    // row height
+    paddingLeft: verticalScale(10),
+    height: verticalScale(55),
     flexDirection: 'row',
+    alignItems: 'center',
   },
   flag: {
     height: verticalScale(20),

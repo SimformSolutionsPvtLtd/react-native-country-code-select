@@ -1,7 +1,9 @@
 import type { CustomButtonProps } from '../CloseButton';
 
 export interface OtherOptionsProps {
-  isFlagVisible: boolean;
+  isFlagVisible?: boolean;
+  isAlphabetsVisible?: boolean;
+  headerSearchPlaceholder?: string;
 }
 
 export interface CountryListModalProps

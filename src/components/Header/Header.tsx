@@ -1,24 +1,33 @@
-import React from 'react';
-import { Text, View } from 'react-native';
-import CloseButton from '../CloseButton/CloseButton';
+import React, { useEffect } from 'react';
+import { TextInput, View } from 'react-native';
+import { CloseButton } from '../CloseButton';
 import styles from './styles';
 import type { HeaderProps } from './types';
 
-/**
- * @todo
- * add search field to header
- */
 const Header = ({
   onClose = () => {},
-  header = '',
   customBackImage,
   customBackImageStyle,
+  filterString,
+  setFilterString,
+  headerSearchPlaceholder = undefined,
 }: HeaderProps) => {
+  useEffect(() => {
+    return () => {
+      setFilterString?.('');
+    };
+  }, [setFilterString]);
+
   return (
     <View style={styles.headerContainer}>
       <CloseButton {...{ onClose, customBackImage, customBackImageStyle }} />
       <View style={styles.headerTitleContainer}>
-        <Text style={styles.headerTitle}>{header}</Text>
+        <TextInput
+          value={filterString}
+          style={styles.searchInput}
+          placeholder={headerSearchPlaceholder}
+          onChangeText={(filter) => setFilterString(filter)}
+        />
       </View>
       <View style={styles.leftAndRightControl} />
     </View>

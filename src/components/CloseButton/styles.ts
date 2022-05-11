@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { verticalScale } from '../../theme/Metrics';
+import { verticalScale } from '../../theme';
 
 export default StyleSheet.create({
   closeImage: {
@@ -10,5 +10,6 @@ export default StyleSheet.create({
     flex: 1,
     padding: verticalScale(15),
     justifyContent: 'center',
+    maxWidth: verticalScale(55),
   },
 });
