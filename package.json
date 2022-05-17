@@ -78,5 +78,9 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
+  },
+  "dependencies": {
+    "react-native-gesture-handler": "^2.4.2",
+    "react-native-reanimated": "^2.8.0"
   }
 }
