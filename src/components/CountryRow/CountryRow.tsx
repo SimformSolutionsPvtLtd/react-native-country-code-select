@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Pressable, Text } from 'react-native';
+import { Image, Pressable, StyleSheet, Text } from 'react-native';
 import type { Country, OtherOptionsProps } from '../CountryListModal';
 import styles from './styles';
 import type { OnSelectProps } from './types';
@@ -17,7 +17,12 @@ const CountryRow = ({
   flag,
   onSelect,
   isFlagVisible = false,
+  countryListTitleStyle = {},
 }: Country & OnSelectProps & OtherOptionsProps) => {
+  const countryListStyle = StyleSheet.flatten([
+    styles.name,
+    countryListTitleStyle,
+  ]);
   return (
     <Pressable
       style={styles.container}
@@ -32,7 +37,7 @@ const CountryRow = ({
       }
     >
       {isFlagVisible && <Image source={{ uri: flag }} style={styles.flag} />}
-      <Text style={styles.name}>
+      <Text style={countryListStyle}>
         {name} (+{callingCode})
       </Text>
     </Pressable>
