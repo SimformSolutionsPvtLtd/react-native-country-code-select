@@ -18,3 +18,17 @@ export const getCountriesAsync = () => {
 
   return newCountryCodeList;
 };
+
+const uniq = (arr: any[]) => Array.from(new Set(arr));
+
+export const getLetters = (countries: Country[]) => {
+  return uniq(
+    countries
+      .map((country: Country) =>
+        (country.name as string)?.substr(0, 1).toLocaleUpperCase()
+      )
+      .sort((firstCountry: string, secondCountry: string) =>
+        firstCountry.localeCompare(secondCountry)
+      )
+  );
+};

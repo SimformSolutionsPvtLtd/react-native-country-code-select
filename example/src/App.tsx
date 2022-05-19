@@ -15,6 +15,7 @@ const App = () => {
         isVisible={isVisible}
         header="Header"
         isFlagVisible={true}
+        isAlphabetsVisible
         onClose={() => setIsVisible(false)}
         {...{onSelect: setSelectedValue}}
       />

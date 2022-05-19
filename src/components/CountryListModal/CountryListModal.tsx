@@ -1,10 +1,16 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Modal, SafeAreaView } from 'react-native';
 import { getCountriesAsync } from '../../utils/commonHelpers';
-import CountryList from '../CountryList/CountryList';
-import Header from '../Header/Header';
+import { CountryList } from '../CountryList';
+import { Header } from '../Header';
 import styles from './styles';
 import type { Country, CountryListModalProps } from './types';
+
+const search = (data: any[], filter: string) => {
+  return data.filter((country: { name: string | any[] }) =>
+    country.name?.includes(filter)
+  );
+};
 
 export const CountryListModal = ({
   isVisible = false,
@@ -15,9 +21,11 @@ export const CountryListModal = ({
   customBackImage = undefined,
   customBackImageStyle = {},
   isFlagVisible = false,
+  isAlphabetsVisible = false,
+  headerSearchPlaceholder,
 }: CountryListModalProps) => {
   const [countries, setCountries] = useState<Country[]>([]);
-
+  const [filterString, setFilterString] = useState<string>('');
   const onSelectRow = useCallback(
     (data) => {
       onSelect(data);
@@ -36,11 +44,18 @@ export const CountryListModal = ({
       <SafeAreaView style={styles.container}>
         <Header
           onClose={onClose}
-          {...{ header, customBackImage, customBackImageStyle }}
+          {...{
+            header,
+            customBackImage,
+            customBackImageStyle,
+            filterString,
+            setFilterString,
+            headerSearchPlaceholder,
+          }}
         />
         <CountryList
-          data={countries}
-          {...{ onSelect: onSelectRow, isFlagVisible }}
+          data={search(countries, filterString)}
+          {...{ onSelect: onSelectRow, isFlagVisible, isAlphabetsVisible }}
         />
       </SafeAreaView>
     </Modal>
