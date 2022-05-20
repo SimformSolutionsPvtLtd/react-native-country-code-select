@@ -1,7 +1,8 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Modal, SafeAreaView } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import { getCountriesAsync } from '../../utils/commonHelpers';
 import { CountryList } from '../CountryList';
+import { CustomModal, customModalRef } from '../CustomModal';
 import { Header } from '../Header';
 import styles from './styles';
 import type { Country, CountryListModalProps } from './types';
@@ -15,7 +16,6 @@ const search = (data: any[], filter: string) => {
 export const CountryListModal = ({
   isVisible = false,
   onClose = () => {},
-  animationType = 'slide',
   header = 'Country Picker',
   onSelect = () => {},
   customBackImage = undefined,
@@ -27,7 +27,7 @@ export const CountryListModal = ({
   const [countries, setCountries] = useState<Country[]>([]);
   const [filterString, setFilterString] = useState<string>('');
   const onSelectRow = useCallback(
-    (data) => {
+    (data: object) => {
       onSelect(data);
       onClose(false);
     },
@@ -39,8 +39,12 @@ export const CountryListModal = ({
     setCountries(getCountriesAsync());
   }, []);
 
+  useEffect(() => {
+    customModalRef.current?.toggleModal(isVisible);
+  }, [isVisible]);
+
   return (
-    <Modal {...{ visible: isVisible }} {...{ animationType }}>
+    <CustomModal {...{ onClose }}>
       <SafeAreaView style={styles.container}>
         <Header
           onClose={onClose}
@@ -58,6 +62,6 @@ export const CountryListModal = ({
           {...{ onSelect: onSelectRow, isFlagVisible, isAlphabetsVisible }}
         />
       </SafeAreaView>
-    </Modal>
+    </CustomModal>
   );
 };
