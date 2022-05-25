@@ -1,9 +1,21 @@
+import type React from 'react';
+import type { TextInputProps } from 'react-native';
 import type { CustomButtonProps } from '../CloseButton';
+
+interface FunctionProps {
+  setFilterString: React.Dispatch<React.SetStateAction<string>>;
+}
 
 export interface OtherOptionsProps {
   isFlagVisible?: boolean;
   isAlphabetsVisible?: boolean;
   headerSearchPlaceholder?: string;
+  isSearchInputVisible?: boolean;
+  renderCustomSearchInput?: ({ setFilterString }: FunctionProps) => JSX.Element;
+  searchHeaderStyle?: object | undefined;
+  isCloseButtonVisible?: boolean | undefined;
+  searchHeaderProps?: TextInputProps | undefined;
+  countryListTitleStyle?: object;
 }
 
 export interface CountryListModalProps

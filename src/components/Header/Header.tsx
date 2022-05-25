@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { TextInput, View } from 'react-native';
+import { StyleSheet, TextInput, View } from 'react-native';
 import { CloseButton } from '../CloseButton';
 import styles from './styles';
 import type { HeaderProps } from './types';
@@ -11,7 +11,16 @@ const Header = ({
   filterString,
   setFilterString,
   headerSearchPlaceholder = undefined,
+  isSearchInputVisible,
+  renderCustomSearchInput,
+  searchHeaderStyle,
+  searchHeaderProps,
+  isCloseButtonVisible,
 }: HeaderProps) => {
+  const textInputStyle = StyleSheet.flatten([
+    styles.searchInput,
+    searchHeaderStyle,
+  ]);
   useEffect(() => {
     return () => {
       setFilterString?.('');
@@ -20,14 +29,21 @@ const Header = ({
 
   return (
     <View style={styles.headerContainer}>
-      <CloseButton {...{ onClose, customBackImage, customBackImageStyle }} />
+      {isCloseButtonVisible && (
+        <CloseButton {...{ onClose, customBackImage, customBackImageStyle }} />
+      )}
       <View style={styles.headerTitleContainer}>
-        <TextInput
-          value={filterString}
-          style={styles.searchInput}
-          placeholder={headerSearchPlaceholder}
-          onChangeText={(filter) => setFilterString(filter)}
-        />
+        {renderCustomSearchInput &&
+          renderCustomSearchInput({ setFilterString })}
+        {!renderCustomSearchInput && isSearchInputVisible && (
+          <TextInput
+            value={filterString}
+            style={textInputStyle}
+            placeholder={headerSearchPlaceholder}
+            onChangeText={(filter) => setFilterString(filter)}
+            {...searchHeaderProps}
+          />
+        )}
       </View>
       <View style={styles.leftAndRightControl} />
     </View>

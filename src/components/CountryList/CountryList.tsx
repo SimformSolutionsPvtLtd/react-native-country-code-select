@@ -1,17 +1,12 @@
 import React, { useCallback, useRef, useState } from 'react';
-import {
-  FlatList,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList } from 'react-native-gesture-handler';
+import { Metrics, verticalScale } from '../../theme';
 import { getLetters } from '../../utils/commonHelpers';
-import { verticalScale, Metrics } from '../../theme';
+import type { Country } from '../CountryListModal';
 import { CountryRow } from '../CountryRow';
 import styles from './styles';
 import type { CountryListProps, LetterProps } from './types';
-import type { Country } from '../CountryListModal';
 
 // row height
 const itemHeight = verticalScale(55);
@@ -28,16 +23,22 @@ const Letter = ({ letter, scrollTo }: LetterProps) => {
   );
 };
 
+const renderEmptyComponent = (
+  <View style={styles.emptyContainer}>
+    <Text style={styles.emptyText}>Oops, there is no country available</Text>
+  </View>
+);
+
 const CountryList = ({
   data,
   onSelect,
   isFlagVisible,
   isAlphabetsVisible = false,
+  countryListTitleStyle = {},
 }: CountryListProps) => {
   const letters = getLetters(data);
   const flatListRef = useRef<FlatList<Country>>(null);
   const [letter, setLetter] = useState<string>('');
-
   const indexLetter = data
     .map((country: Country) => (country.name as string)?.substr(0, 1))
     .join('');
@@ -77,15 +78,12 @@ const CountryList = ({
           offset: itemHeight * index,
           index,
         })}
-        ListEmptyComponent={() => (
-          <View style={styles.emptyContainer}>
-            <Text style={styles.emptyText}>
-              Oops, there is no country available
-            </Text>
-          </View>
-        )}
+        ListEmptyComponent={renderEmptyComponent}
         renderItem={({ item }) => (
-          <CountryRow {...item} {...{ onSelect, isFlagVisible }} />
+          <CountryRow
+            {...item}
+            {...{ onSelect, isFlagVisible, countryListTitleStyle }}
+          />
         )}
       />
       {isAlphabetsVisible && (

@@ -23,6 +23,12 @@ export const CountryListModal = ({
   isFlagVisible = false,
   isAlphabetsVisible = false,
   headerSearchPlaceholder,
+  isSearchInputVisible = true,
+  renderCustomSearchInput = undefined,
+  searchHeaderStyle = {},
+  searchHeaderProps = {},
+  isCloseButtonVisible = true,
+  countryListTitleStyle = {},
 }: CountryListModalProps) => {
   const [countries, setCountries] = useState<Country[]>([]);
   const [filterString, setFilterString] = useState<string>('');
@@ -55,11 +61,21 @@ export const CountryListModal = ({
             filterString,
             setFilterString,
             headerSearchPlaceholder,
+            renderCustomSearchInput,
+            isSearchInputVisible,
+            searchHeaderStyle,
+            isCloseButtonVisible,
+            searchHeaderProps,
           }}
         />
         <CountryList
           data={search(countries, filterString)}
-          {...{ onSelect: onSelectRow, isFlagVisible, isAlphabetsVisible }}
+          {...{
+            onSelect: onSelectRow,
+            isFlagVisible,
+            isAlphabetsVisible,
+            countryListTitleStyle,
+          }}
         />
       </SafeAreaView>
     </CustomModal>
