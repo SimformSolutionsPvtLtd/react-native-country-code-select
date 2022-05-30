@@ -5,7 +5,7 @@ import { CountryList } from '../CountryList';
 import { CustomModal, customModalRef } from '../CustomModal';
 import { Header } from '../Header';
 import styles from './styles';
-import type { Country, CountryListModalProps } from './types';
+import type { Country, CountryPickerModalProps } from './types';
 
 const search = (data: any[], filter: string) => {
   return data.filter((country: { name: string | any[] }) =>
@@ -13,23 +13,31 @@ const search = (data: any[], filter: string) => {
   );
 };
 
-export const CountryListModal = ({
+export const CountryPickerModal = ({
   isVisible = false,
   onClose = () => {},
-  header = 'Country Picker',
   onSelect = () => {},
   customBackImage = undefined,
   customBackImageStyle = {},
   isFlagVisible = false,
-  isAlphabetsVisible = false,
-  headerSearchPlaceholder,
+  isAlphabetsVisible = true,
+  headerSearchPlaceholder = 'Enter Country',
   isSearchInputVisible = true,
   renderCustomSearchInput = undefined,
   searchHeaderStyle = {},
   searchHeaderProps = {},
-  isCloseButtonVisible = true,
+  isCloseButtonVisible = false,
   countryListTitleStyle = {},
-}: CountryListModalProps) => {
+  customModalStyles = {},
+  customTopHeaderStyle = {},
+  customRowStyle = {},
+  customAlphabetsStyles = {},
+  customAlphabetContainerStyles = {},
+  emptyText = 'Oops, there is no country available',
+  emptyTextStyle = {},
+  emptyContainerStyles = {},
+  renderCustomEmptyComponent,
+}: CountryPickerModalProps) => {
   const [countries, setCountries] = useState<Country[]>([]);
   const [filterString, setFilterString] = useState<string>('');
   const onSelectRow = useCallback(
@@ -41,7 +49,6 @@ export const CountryListModal = ({
   );
 
   useEffect(() => {
-    //loading country list
     setCountries(getCountriesAsync());
   }, []);
 
@@ -50,12 +57,11 @@ export const CountryListModal = ({
   }, [isVisible]);
 
   return (
-    <CustomModal {...{ onClose }}>
-      <SafeAreaView style={styles.container}>
+    <CustomModal {...{ onClose, customTopHeaderStyle }}>
+      <SafeAreaView style={[styles.container, customModalStyles]}>
         <Header
           onClose={onClose}
           {...{
-            header,
             customBackImage,
             customBackImageStyle,
             filterString,
@@ -75,6 +81,13 @@ export const CountryListModal = ({
             isFlagVisible,
             isAlphabetsVisible,
             countryListTitleStyle,
+            customRowStyle,
+            customAlphabetsStyles,
+            customAlphabetContainerStyles,
+            emptyText,
+            emptyTextStyle,
+            emptyContainerStyles,
+            renderCustomEmptyComponent,
           }}
         />
       </SafeAreaView>

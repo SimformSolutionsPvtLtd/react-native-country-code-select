@@ -1,11 +1,27 @@
-import type { Country, OtherOptionsProps } from '../CountryListModal';
+import type {
+  Country,
+  CountryPickerModalAdditionalProps,
+} from '../CountryPickerModal';
 import type { OnSelectProps } from '../CountryRow';
 
-export interface CountryListProps extends OnSelectProps, OtherOptionsProps {
+export interface EmptyComponentProps {
+  emptyText?: string;
+  emptyTextStyle?: object | undefined;
+  emptyContainerStyles?: object | undefined;
+  renderCustomEmptyComponent?: any;
+}
+export interface CountryListProps
+  extends OnSelectProps,
+    CountryPickerModalAdditionalProps {
   data: Country[];
 }
 
-export interface LetterProps {
+export interface HeightProps {
+  height: number;
+}
+
+export interface LetterProps extends CountryPickerModalAdditionalProps {
   letter: string;
   scrollTo(letter: string): void;
+  customRowStyle?: object | undefined;
 }

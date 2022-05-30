@@ -6,7 +6,7 @@ interface FunctionProps {
   setFilterString: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export interface OtherOptionsProps {
+export interface CountryPickerModalAdditionalProps {
   isFlagVisible?: boolean;
   isAlphabetsVisible?: boolean;
   headerSearchPlaceholder?: string;
@@ -16,15 +16,22 @@ export interface OtherOptionsProps {
   isCloseButtonVisible?: boolean | undefined;
   searchHeaderProps?: TextInputProps | undefined;
   countryListTitleStyle?: object;
+  customModalStyles?: object | undefined;
+  customTopHeaderStyle?: object | undefined;
+  customRowStyle?: object | undefined;
+  customAlphabetsStyles?: object | undefined;
+  customAlphabetContainerStyles?: object | undefined;
+  emptyText?: string;
+  emptyTextStyle?: object | undefined;
+  emptyContainerStyles?: object | undefined;
+  renderCustomEmptyComponent?: React.ReactNode | undefined;
 }
 
-export interface CountryListModalProps
+export interface CountryPickerModalProps
   extends CustomButtonProps,
-    OtherOptionsProps {
+    CountryPickerModalAdditionalProps {
   isVisible: boolean;
   onClose: (event: Event) => void;
-  animationType?: 'slide' | 'none' | 'fade' | undefined;
-  header: string;
   onSelect?: (event: Event) => void;
 }
 

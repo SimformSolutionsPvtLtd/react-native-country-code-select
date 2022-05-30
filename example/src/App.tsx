@@ -1,6 +1,6 @@
-import React, { SetStateAction, useState } from 'react';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
-import { CountryListModal } from 'react-native-country-code-select';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { CountryPickerModal } from 'react-native-country-code-select';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const App = () => {
@@ -15,23 +15,15 @@ const App = () => {
         <Text onPress={() => setIsVisible(oldStatus => !oldStatus)}>
           Open picker
         </Text>
-        <CountryListModal
+        <CountryPickerModal
           isVisible={isVisible}
-          header="Header"
           isFlagVisible
           isAlphabetsVisible
+          isSearchInputVisible
+          isCloseButtonVisible
+          emptyText='no data'
           headerSearchPlaceholder="Search here..."
           onClose={() => setIsVisible(false)}
-          isCloseButtonVisible
-          isSearchInputVisible
-          // add your custom text input here
-          renderCustomSearchInput={({setFilterString}) => (
-            <TextInput
-              onChangeText={(text: SetStateAction<string>) =>
-                setFilterString(text)
-              }
-            />
-          )}
           {...{onSelect: setSelectedValue}}
         />
       </View>

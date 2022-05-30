@@ -1,1 +1,1 @@
-export * from './components/CountryListModal';
+export * from './components/CountryPickerModal';
