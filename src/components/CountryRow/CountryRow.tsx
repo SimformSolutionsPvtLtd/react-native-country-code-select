@@ -1,13 +1,12 @@
 import React from 'react';
 import { Image, Pressable, StyleSheet, Text } from 'react-native';
-import type { Country, OtherOptionsProps } from '../CountryListModal';
+import type {
+  Country,
+  CountryPickerModalAdditionalProps,
+} from '../CountryPickerModal';
 import styles from './styles';
 import type { OnSelectProps } from './types';
 
-/**
- * @todo
- * Design improvements
- */
 const CountryRow = ({
   name,
   callingCode,
@@ -18,14 +17,15 @@ const CountryRow = ({
   onSelect,
   isFlagVisible = false,
   countryListTitleStyle = {},
-}: Country & OnSelectProps & OtherOptionsProps) => {
+  customRowStyle,
+}: Country & OnSelectProps & CountryPickerModalAdditionalProps) => {
   const countryListStyle = StyleSheet.flatten([
     styles.name,
     countryListTitleStyle,
   ]);
   return (
     <Pressable
-      style={styles.container}
+      style={[styles.container, customRowStyle]}
       onPress={() =>
         onSelect?.({
           name,

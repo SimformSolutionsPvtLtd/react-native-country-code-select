@@ -1,5 +1,5 @@
 export interface CustomButtonProps {
-  onClose: ((event: Event) => any) | undefined;
+  onClose: Function;
   customBackImage?: number | undefined;
   customBackImageStyle?: object;
 }

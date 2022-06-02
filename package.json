@@ -5,7 +5,7 @@
   "homepage": "https://github.com/SimformSolutionsPvtLtd/react-native-country-code-select.git",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "author": "Chetan Godiya <chetan.g@simformsolutions.com>",
+  "author": "Simform Solutions",
   "license": "MIT",
   "files": [
     "lib"
@@ -38,13 +38,14 @@
     "husky": "^7.0.4",
     "jest": "^27.4.7",
     "lint-staged": "^11.1.2",
+    "prettier": "^2.6.2",
     "metro-react-native-babel-preset": "^0.67.0",
     "react": "^17.0.2",
     "react-native": "^0.67.1",
-    "react-test-renderer": "^17.0.2",
-    "typescript": "^4.5.5",
     "react-native-gesture-handler": "^2.4.2",
-    "react-native-reanimated": "^2.8.0"
+    "react-native-reanimated": "^2.8.0",
+    "react-test-renderer": "^17.0.2",
+    "typescript": "^4.5.5"
   },
   "peerDependencies": {
     "react": "*",

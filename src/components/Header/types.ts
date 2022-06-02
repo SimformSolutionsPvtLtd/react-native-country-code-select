@@ -1,9 +1,10 @@
 import type { Dispatch, SetStateAction } from 'react';
 import type { CustomButtonProps } from '../CloseButton';
-import type { OtherOptionsProps } from '../CountryListModal';
+import type { CountryPickerModalAdditionalProps } from '../CountryPickerModal';
 
-export interface HeaderProps extends CustomButtonProps, OtherOptionsProps {
-  header: string;
+export interface HeaderProps
+  extends CustomButtonProps,
+    CountryPickerModalAdditionalProps {
   filterString: string;
   setFilterString: Dispatch<SetStateAction<string>>;
   headerSearchPlaceholder?: string;

@@ -1,4 +1,4 @@
-import type { Country } from '../components/CountryListModal';
+import type { Country } from '../components/CountryPickerModal';
 import {
   CountryCodeList,
   countryList,

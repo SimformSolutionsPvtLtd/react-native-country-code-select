@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+import { Keyboard } from 'react-native';
 import { Gesture } from 'react-native-gesture-handler';
 import {
   Extrapolate,
@@ -42,6 +43,7 @@ const useCustomModal = ({ onClose }: onCloseModalProps) => {
       if (translateY.value > -Metrics.screenHeight / 1.5) {
         translateY.value = withSpring(0, { damping: 50 });
         runOnJS(onDragToEnd)();
+        runOnJS(Keyboard.dismiss)();
       } else if (translateY.value < -Metrics.screenHeight / 1.5) {
         translateY.value = withSpring(TOP_LIMIT, { damping: 50 });
       }
