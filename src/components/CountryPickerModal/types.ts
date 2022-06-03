@@ -2,7 +2,7 @@ import type React from 'react';
 import type { TextInputProps } from 'react-native';
 import type { CustomButtonProps } from '../CloseButton';
 
-interface FunctionProps {
+export interface FunctionProps {
   setFilterString: React.Dispatch<React.SetStateAction<string>>;
 }
 
@@ -25,6 +25,8 @@ export interface CountryPickerModalAdditionalProps {
   emptyTextStyle?: object | undefined;
   emptyContainerStyles?: object | undefined;
   renderCustomEmptyComponent?: React.ReactNode | undefined;
+  customCloseButton?: () => JSX.Element;
+  renderSearchInputClear?: ({ setFilterString }: FunctionProps) => JSX.Element;
 }
 
 export interface CountryPickerModalProps

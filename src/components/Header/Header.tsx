@@ -17,6 +17,8 @@ const Header = ({
   searchHeaderStyle,
   searchHeaderProps,
   isCloseButtonVisible,
+  customCloseButton,
+  renderSearchInputClear,
 }: HeaderProps) => {
   useEffect(() => {
     return () => {
@@ -26,7 +28,8 @@ const Header = ({
 
   return (
     <View style={styles.headerContainer}>
-      {isCloseButtonVisible && (
+      {customCloseButton && customCloseButton()}
+      {isCloseButtonVisible && !customCloseButton && (
         <CloseButton {...{ onClose, customBackImage, customBackImageStyle }} />
       )}
       <View
@@ -45,6 +48,7 @@ const Header = ({
               headerSearchPlaceholder,
               setFilterString,
               searchHeaderProps,
+              renderSearchInputClear,
             }}
           />
         )}

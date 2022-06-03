@@ -23,6 +23,7 @@ const SearchTextInput = ({
   headerSearchPlaceholder,
   setFilterString,
   searchHeaderProps,
+  renderSearchInputClear,
 }: SearchTextInputProps) => {
   const textInputStyle = StyleSheet.flatten([
     styles.searchInput,
@@ -38,7 +39,11 @@ const SearchTextInput = ({
         onChangeText={(filter: string) => setFilterString(filter)}
         {...searchHeaderProps}
       />
-      {filterString !== '' && renderClearView({ setFilterString })}
+      {filterString !== ''
+        ? renderSearchInputClear
+          ? renderSearchInputClear({ setFilterString })
+          : renderClearView({ setFilterString, renderSearchInputClear })
+        : null}
     </View>
   );
 };
