@@ -19,7 +19,7 @@ export const CountryPickerModal = ({
   onSelect = () => {},
   customBackImage = undefined,
   customBackImageStyle = {},
-  isFlagVisible = false,
+  isFlagVisible = true,
   isAlphabetsVisible = true,
   headerSearchPlaceholder = 'Enter Country',
   isSearchInputVisible = true,
