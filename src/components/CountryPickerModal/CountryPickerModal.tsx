@@ -17,13 +17,13 @@ export const CountryPickerModal = ({
   isVisible = false,
   onClose = () => {},
   onSelect = () => {},
-  customBackImage = undefined,
+  customBackImage,
   customBackImageStyle = {},
   isFlagVisible = true,
   isAlphabetsVisible = true,
   headerSearchPlaceholder = 'Enter Country',
   isSearchInputVisible = true,
-  renderCustomSearchInput = undefined,
+  renderCustomSearchInput,
   searchHeaderStyle = {},
   searchHeaderProps = {},
   isCloseButtonVisible = false,
@@ -37,6 +37,8 @@ export const CountryPickerModal = ({
   emptyTextStyle = {},
   emptyContainerStyles = {},
   renderCustomEmptyComponent,
+  customCloseButton,
+  renderSearchInputClear,
 }: CountryPickerModalProps) => {
   const [countries, setCountries] = useState<Country[]>([]);
   const [filterString, setFilterString] = useState<string>('');
@@ -54,6 +56,9 @@ export const CountryPickerModal = ({
 
   useEffect(() => {
     customModalRef.current?.toggleModal(isVisible);
+    if (isVisible) {
+      setFilterString('');
+    }
   }, [isVisible]);
 
   return (
@@ -72,6 +77,8 @@ export const CountryPickerModal = ({
             searchHeaderStyle,
             isCloseButtonVisible,
             searchHeaderProps,
+            customCloseButton,
+            renderSearchInputClear,
           }}
         />
         <CountryList
