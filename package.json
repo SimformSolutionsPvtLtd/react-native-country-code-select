@@ -1,6 +1,6 @@
 {
   "name": "react-native-country-code-select",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "React Native component to select a country code",
   "homepage": "https://github.com/SimformSolutionsPvtLtd/react-native-country-code-select.git",
   "main": "lib/index.js",
@@ -14,10 +14,14 @@
     "react",
     "react-native",
     "typescript",
+    "country-code",
+    "select-code",
+    "country",
+    "calling-code",
     "rn"
   ],
   "scripts": {
-    "build": "rm -rf lib && tsc -p . && cp -R ./src/assets ./lib/ ",
+    "build": "rm -rf lib && tsc -p . && cp -R ./src/assets ./lib/",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "prepare": "husky install",
     "test": "jest"

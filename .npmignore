@@ -1,0 +1,8 @@
+.github/
+.husky/
+example/
+assets/
+.eslintignore
+.eslintrc
+CONTRIBUTING.md
+babel.config.js
