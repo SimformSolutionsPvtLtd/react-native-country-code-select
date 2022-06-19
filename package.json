@@ -2,7 +2,7 @@
   "name": "react-native-country-code-select",
   "version": "0.0.1",
   "description": "React Native component to select a country code",
-  "homepage": "https://github.com/SimformSolutionsPvtLtd/react-native-country-code-select.git",
+  "homepage": "https://github.com/SimformSolutionsPvtLtd/react-native-country-code-select#readme",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": "Simform Solutions",
@@ -10,6 +10,10 @@
   "files": [
     "lib"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SimformSolutionsPvtLtd/react-native-country-code-select"
+  },
   "keywords": [
     "react",
     "react-native",

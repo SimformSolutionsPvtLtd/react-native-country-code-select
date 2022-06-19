@@ -9,6 +9,6 @@ export interface ClearButtonProps {
 export interface SearchTextInputProps extends ClearButtonProps {
   filterString?: string;
   headerSearchPlaceholder?: string;
-  searchHeaderStyle?: object | undefined;
+  searchHeaderInputStyle?: object | undefined;
   searchHeaderProps?: object | undefined;
 }

@@ -24,12 +24,12 @@ export const CountryPickerModal = ({
   headerSearchPlaceholder = 'Enter Country',
   isSearchInputVisible = true,
   renderCustomSearchInput,
-  searchHeaderStyle = {},
+  searchHeaderInputStyle = {},
   searchHeaderProps = {},
   isCloseButtonVisible = false,
   countryListTitleStyle = {},
-  customModalStyles = {},
-  customTopHeaderStyle = {},
+  modalContentStyle = {},
+  modalContainerStyle = {},
   customRowStyle = {},
   customAlphabetsStyles = {},
   customAlphabetContainerStyles = {},
@@ -62,8 +62,8 @@ export const CountryPickerModal = ({
   }, [isVisible]);
 
   return (
-    <CustomModal {...{ onClose, customTopHeaderStyle }}>
-      <SafeAreaView style={[styles.container, customModalStyles]}>
+    <CustomModal {...{ onClose, modalContainerStyle }}>
+      <SafeAreaView style={[styles.container, modalContentStyle]}>
         <Header
           onClose={onClose}
           {...{
@@ -74,7 +74,7 @@ export const CountryPickerModal = ({
             headerSearchPlaceholder,
             renderCustomSearchInput,
             isSearchInputVisible,
-            searchHeaderStyle,
+            searchHeaderInputStyle,
             isCloseButtonVisible,
             searchHeaderProps,
             customCloseButton,

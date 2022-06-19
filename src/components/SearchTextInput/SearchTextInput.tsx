@@ -19,7 +19,7 @@ const renderClearView = ({ setFilterString }: ClearButtonProps) => (
 
 const SearchTextInput = ({
   filterString,
-  searchHeaderStyle,
+  searchHeaderInputStyle,
   headerSearchPlaceholder,
   setFilterString,
   searchHeaderProps,
@@ -27,7 +27,7 @@ const SearchTextInput = ({
 }: SearchTextInputProps) => {
   const textInputStyle = StyleSheet.flatten([
     styles.searchInput,
-    searchHeaderStyle,
+    searchHeaderInputStyle,
   ]);
   return (
     <View style={styles.container}>

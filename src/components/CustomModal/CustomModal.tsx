@@ -11,7 +11,7 @@ export const customModalRef = createRef<CustomModalRefProps>();
 const CustomModal = ({
   children,
   onClose,
-  customTopHeaderStyle,
+  modalContainerStyle,
 }: CustomModalProps) => {
   const { gestureHandler, animatedBottomStyle, toggleModal } = useCustomModal({
     onClose,
@@ -27,7 +27,7 @@ const CustomModal = ({
 
   const topViewStyles = StyleSheet.flatten([
     styles.container,
-    customTopHeaderStyle,
+    modalContainerStyle,
   ]);
 
   return (
