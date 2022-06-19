@@ -12,12 +12,12 @@ export interface CountryPickerModalAdditionalProps {
   headerSearchPlaceholder?: string;
   isSearchInputVisible?: boolean;
   renderCustomSearchInput?: ({ setFilterString }: FunctionProps) => JSX.Element;
-  searchHeaderStyle?: object | undefined;
+  searchHeaderInputStyle?: object | undefined;
   isCloseButtonVisible?: boolean | undefined;
   searchHeaderProps?: TextInputProps | undefined;
   countryListTitleStyle?: object;
-  customModalStyles?: object | undefined;
-  customTopHeaderStyle?: object | undefined;
+  modalContentStyle?: object | undefined;
+  modalContainerStyle?: object | undefined;
   customRowStyle?: object | undefined;
   customAlphabetsStyles?: object | undefined;
   customAlphabetContainerStyles?: object | undefined;

@@ -14,7 +14,7 @@ const Header = ({
   headerSearchPlaceholder = undefined,
   isSearchInputVisible,
   renderCustomSearchInput,
-  searchHeaderStyle,
+  searchHeaderInputStyle,
   searchHeaderProps,
   isCloseButtonVisible,
   customCloseButton,
@@ -44,7 +44,7 @@ const Header = ({
           <SearchTextInput
             {...{
               filterString,
-              searchHeaderStyle,
+              searchHeaderInputStyle,
               headerSearchPlaceholder,
               setFilterString,
               searchHeaderProps,

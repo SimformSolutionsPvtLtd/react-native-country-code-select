@@ -7,7 +7,9 @@
 
 ---
 
-This is pure javascript library for selecting the country with search and filter using quick select and search via country name
+This is a pure javascript library for selecting a country with search and filter functionality
+
+This library is easy to use and provides you full customization, so you can customize component based on your need
 
 ## 🎬 Preview
 ---
@@ -23,7 +25,7 @@ This is pure javascript library for selecting the country with search and filter
 
 ---
 ## Quick Access
-[Installation](#installation) | [CountryPicker](#countrypicker) | [Methods](#methods) | [Properties](#props) | [Example](#example) | [License](#license)
+| [Installation](#installation) | [CountryPicker](#countrypicker) | [Methods](#methods) | [Properties](#props) | [Example](#example) | [License](#license) |
 
 ## Installation
 ```bash
@@ -31,7 +33,7 @@ $ npm install react-native-country-code-select
 # --- or ---
 $ yarn add react-native-country-code-select
 ```
-## Install additional dependency
+## Install additional dependencies
 ```bash
 $ npm install react-native-gesture-handler react-native-reanimated
 # --- or ---
@@ -139,36 +141,36 @@ const styles = StyleSheet.create({
 
 > |Name|Description
 >|:-|:-
->|**onClose***|callback for closing the modal
->|**onSelect***|callback for selecting country will reture current selected city
+>|**onClose***| Close modal callback function
+>|**onSelect***| Select country callback function that returns the selected country
 
 ## Props
 
 > |Name|Default Value|Description
 >|:-|:-:|:-
->|***isVisible****|false|to visible the modal itself
->|customBackImage|false|to set user specific back image
->|customBackImageStyle|false|to set user specific back image style
->|isFlagVisible|false|to visible the flags in the list
->|isAlphabetsVisible|false|to visible alphabets for quick access the country
->|headerSearchPlaceholder|"Enter Country"|to set default placeholder for header search input
->|isSearchInputVisible|true|to enabled/disabled the header search input
->|renderCustomSearchInput|undefined|to render user specific component
->|searchHeaderStyle|{}|to give a style in header search input
->|isCloseButtonVisible|false|to enabled/disabled the close button for modal
->|searchHeaderProps|{}|to pass extra props into the header search input
->|countryListTitleStyle|{}|to specifies user specific styles
->|customModalStyles|{}|style for a modal container
->|customTopHeaderStyle| {} | style for upper sheet area
->|customRowStyle|{}|style for country list item 
->|customAlphabetsStyles|{}|style for alphabets list 
->|customAlphabetContainerStyles|{} |style for alphabet container style
->|emptyText|"" |text shown when there is no data if search country is not available
->|emptyTextStyle|{}|style for empty text
->|emptyContainerStyles| {}  |style for container of empty text
->|renderCustomEmptyComponent|undefined|to render user specific empty component
->|customCloseButton|undefined|to render user specific button
->|renderSearchInputClear|undefined|render custom clear header search input
+>|***isVisible****|false| Hide / show country list modal
+>|customBackImage|Image| Custom close modal image source
+>|customBackImageStyle|{}| Close modal image style
+>|isFlagVisible|true| If false, Country flag will be hidden
+>|isAlphabetsVisible|true|If false, Quick country fliter will be hidden
+>|headerSearchPlaceholder|"Enter Country"| Custom search placeholder text
+>|isSearchInputVisible|true|If false, Search input will be hidden
+>|renderCustomSearchInput|undefined| Render custom search input
+>|searchHeaderInputStyle|{}| Search input style
+>|isCloseButtonVisible|false|If true, Modal close button will be visible
+>|searchHeaderProps|{}| Search input props
+>|countryListTitleStyle|{}| Country name / title style
+>|modalContentStyle|{}| Modal content style
+>|modalContainerStyle| {} | Modal container style
+>|customRowStyle|{}| Country list item / row style
+>|customAlphabetsStyles|{}| Quick filter (A-Z) text style
+>|customAlphabetContainerStyles|{} | Quick filter (A-Z) container style
+>|emptyText| `Oops, there is no country available` | Custom message to show when there's no search result found
+>|emptyTextStyle|{}| Custom empty message style
+>|emptyContainerStyles| {}  | Custom empty message container style
+>|renderCustomEmptyComponent|undefined| Render custom component when there's no search result found
+>|customCloseButton|undefined| Render custom modal close button
+>|renderSearchInputClear|undefined| Render custom cancel image in search input
 
 ---
 ## Example
