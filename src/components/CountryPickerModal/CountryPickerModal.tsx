@@ -84,6 +84,7 @@ export const CountryPickerModal = ({
         <CountryList
           data={search(countries, filterString)}
           {...{
+            isVisible,
             onSelect: onSelectRow,
             isFlagVisible,
             isAlphabetsVisible,

@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   ScrollView,
   StyleSheet,
@@ -55,6 +55,7 @@ const getHeightFromTheCustomStyle = (customRowStyle: any) => {
 const CountryList = ({
   data,
   onSelect,
+  isVisible,
   isFlagVisible,
   isAlphabetsVisible = false,
   countryListTitleStyle = {},
@@ -79,6 +80,11 @@ const CountryList = ({
   const indexLetter = data
     .map((country: Country) => (country.name as string)?.substr(0, 1))
     .join('');
+
+  useEffect(() => {
+    if (isVisible)
+      flatListRef.current?.scrollToIndex({ animated: false, index: 0 });
+  }, [isVisible]);
 
   const scrollTo = useCallback(
     (letterToMove: string, animated: boolean = true) => {

@@ -14,6 +14,7 @@ export interface CountryListProps
   extends OnSelectProps,
     CountryPickerModalAdditionalProps {
   data: Country[];
+  isVisible: boolean;
 }
 
 export interface HeightProps {

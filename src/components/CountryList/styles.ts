@@ -10,6 +10,7 @@ export default StyleSheet.create({
   container: {
     flexGrow: 1,
     width: Metrics.screenWidth * 0.9,
+    paddingBottom: verticalScale(55),
   },
   emptyContainer: {
     flex: 1,
