@@ -25,28 +25,38 @@ This library is easy to use and provides you full customization, so you can cust
 
 ---
 ## Quick Access
-| [Installation](#installation) | [CountryPicker](#countrypicker) | [Methods](#methods) | [Properties](#props) | [Example](#example) | [License](#license) |
+[Installation](#installation) | [CountryPicker](#countrypicker) | [Methods](#methods) | [Properties](#props) | [Example](#example) | [License](#license)
 
 ## Installation
+
+##### 1. Install library, react-native-reanimated and react-native-gesture-handler
+
 ```bash
-$ npm install react-native-country-code-select
+$ npm install react-native-country-code-select react-native-reanimated react-native-gesture-handler 
 # --- or ---
-$ yarn add react-native-country-code-select
+$ yarn add react-native-country-code-select react-native-reanimated react-native-gesture-handler 
 ```
-## Install additional dependencies
+##### 2. Install cocoapods in the ios project
 ```bash
-$ npm install react-native-gesture-handler react-native-reanimated
-# --- or ---
-$ yarn add react-native-gesture-handler react-native-reanimated
+cd ios && pod install
+```
+
+> Note: Make sure to wrap your root component / entry point with [GestureHandleRootView](https://docs.swmansion.com/react-native-gesture-handler/docs/1.10.3/)
+
+```bash
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+export default const App = () => {
+  return <GestureHandlerRootView>{/* content */}</GestureHandlerRootView>;
+}
 ```
 ##### Know more about [react-native-gesture-handler](https://www.npmjs.com/package/react-native-gesture-handler), [react-native-reanimated](https://www.npmjs.com/package/react-native-reanimated) 
 --- 
 ## CountryPicker
 #### 🎬 Preview
 ---
-![Default CountryPicker](./assets/sample3.gif)
+![Default CountryPicker](./assets/sample1.gif)
 
-#### Usage
+#### Basic usage
 ---
 ```jsx
 import React, { useState } from 'react';
@@ -54,7 +64,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { CountryPickerModal } from 'react-native-country-code-select';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
-const App = () => {
+export default const App = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedValue, setSelectedValue] = useState({});
   return (
@@ -80,8 +90,6 @@ const App = () => {
     </GestureHandlerRootView>
   );
 };
-
-export default App;
 
 const styles = StyleSheet.create({
   container: {
@@ -149,7 +157,7 @@ const styles = StyleSheet.create({
 > |Name|Default Value|Description
 >|:-|:-:|:-
 >|***isVisible****|false| Hide / show country list modal
->|customBackImage|Image| Custom close modal image source
+>|customBackImageSource|Image| Custom close modal image source
 >|customBackImageStyle|{}| Close modal image style
 >|isFlagVisible|true| If false, Country flag will be hidden
 >|isAlphabetsVisible|true|If false, Quick country fliter will be hidden

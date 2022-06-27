@@ -17,7 +17,7 @@ export const CountryPickerModal = ({
   isVisible = false,
   onClose = () => {},
   onSelect = () => {},
-  customBackImage,
+  customBackImageSource,
   customBackImageStyle = {},
   isFlagVisible = true,
   isAlphabetsVisible = true,
@@ -67,7 +67,7 @@ export const CountryPickerModal = ({
         <Header
           onClose={onClose}
           {...{
-            customBackImage,
+            customBackImageSource,
             customBackImageStyle,
             filterString,
             setFilterString,
