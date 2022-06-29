@@ -1,5 +1,5 @@
 export interface CustomButtonProps {
   onClose: Function;
-  customBackImage?: number | undefined;
+  customBackImageSource?: number | undefined;
   customBackImageStyle?: object;
 }

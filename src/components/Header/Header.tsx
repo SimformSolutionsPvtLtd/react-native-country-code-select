@@ -7,7 +7,7 @@ import type { HeaderProps } from './types';
 
 const Header = ({
   onClose = () => {},
-  customBackImage,
+  customBackImageSource,
   customBackImageStyle,
   filterString,
   setFilterString,
@@ -30,7 +30,9 @@ const Header = ({
     <View style={styles.headerContainer}>
       {customCloseButton && customCloseButton()}
       {isCloseButtonVisible && !customCloseButton && (
-        <CloseButton {...{ onClose, customBackImage, customBackImageStyle }} />
+        <CloseButton
+          {...{ onClose, customBackImageSource, customBackImageStyle }}
+        />
       )}
       <View
         style={[

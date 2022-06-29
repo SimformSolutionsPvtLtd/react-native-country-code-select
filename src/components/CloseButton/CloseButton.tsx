@@ -6,7 +6,7 @@ import type { CustomButtonProps } from './types';
 
 const CloseButton = ({
   onClose,
-  customBackImage = undefined,
+  customBackImageSource = undefined,
   customBackImageStyle = {},
 }: CustomButtonProps) => {
   const styleForCloseImage = StyleSheet.flatten([
@@ -22,7 +22,7 @@ const CloseButton = ({
   return (
     <Pressable onPress={onClosePressed} style={styles.leftAndRightControl}>
       <Image
-        source={customBackImage ?? Icons.closeImage}
+        source={customBackImageSource ?? Icons.closeImage}
         style={styleForCloseImage}
       />
     </Pressable>
