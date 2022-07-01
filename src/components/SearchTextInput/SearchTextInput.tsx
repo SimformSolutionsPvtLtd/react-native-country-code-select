@@ -12,7 +12,7 @@ const renderClearView = ({ setFilterString }: ClearButtonProps) => (
     <Image
       source={Icons.closeImage}
       style={styles.closeImage}
-      resizeMode="contain"
+      resizeMode={'contain'}
     />
   </Pressable>
 );
@@ -41,7 +41,7 @@ const SearchTextInput = ({
       />
       {filterString !== ''
         ? renderSearchInputClear
-          ? renderSearchInputClear({ setFilterString })
+          ? renderSearchInputClear({ setFilterString, filterString })
           : renderClearView({ setFilterString, renderSearchInputClear })
         : null}
     </View>
