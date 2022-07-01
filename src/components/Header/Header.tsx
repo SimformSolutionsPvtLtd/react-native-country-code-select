@@ -41,7 +41,7 @@ const Header = ({
         ]}
       >
         {renderCustomSearchInput &&
-          renderCustomSearchInput({ setFilterString })}
+          renderCustomSearchInput({ setFilterString, filterString })}
         {!renderCustomSearchInput && isSearchInputVisible && (
           <SearchTextInput
             {...{

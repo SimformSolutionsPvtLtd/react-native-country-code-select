@@ -10,6 +10,7 @@ export default StyleSheet.create({
   container: {
     borderBottomWidth: StyleSheet.hairlineWidth,
     paddingLeft: verticalScale(10),
+    paddingRight: verticalScale(25),
     height: verticalScale(55),
     flexDirection: 'row',
     alignItems: 'center',

@@ -4,6 +4,7 @@ import type { CustomButtonProps } from '../CloseButton';
 
 export interface FunctionProps {
   setFilterString: React.Dispatch<React.SetStateAction<string>>;
+  filterString: string | undefined;
 }
 
 export interface CountryPickerModalAdditionalProps {
@@ -11,7 +12,10 @@ export interface CountryPickerModalAdditionalProps {
   isAlphabetsVisible?: boolean;
   headerSearchPlaceholder?: string;
   isSearchInputVisible?: boolean;
-  renderCustomSearchInput?: ({ setFilterString }: FunctionProps) => JSX.Element;
+  renderCustomSearchInput?: ({
+    setFilterString,
+    filterString,
+  }: FunctionProps) => JSX.Element;
   searchHeaderInputStyle?: object | undefined;
   isCloseButtonVisible?: boolean | undefined;
   searchHeaderProps?: TextInputProps | undefined;
