@@ -109,9 +109,10 @@ const CountryList = ({
   return (
     <View style={styles.mainContainer}>
       <FlatList
+        removeClippedSubviews={true}
         ref={flatListRef}
         showsVerticalScrollIndicator={false}
-        keyboardShouldPersistTaps="always"
+        keyboardShouldPersistTaps={'always'}
         data={data}
         keyExtractor={(keyData) => keyData?.name}
         horizontal={false}

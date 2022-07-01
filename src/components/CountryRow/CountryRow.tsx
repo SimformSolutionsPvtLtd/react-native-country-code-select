@@ -1,5 +1,5 @@
-import React from 'react';
-import { Image, Pressable, StyleSheet, Text } from 'react-native';
+import React, { memo } from 'react';
+import { Image, Pressable, StyleSheet, Text, Keyboard } from 'react-native';
 import type {
   Country,
   CountryPickerModalAdditionalProps,
@@ -26,15 +26,16 @@ const CountryRow = ({
   return (
     <Pressable
       style={[styles.container, customRowStyle]}
-      onPress={() =>
+      onPress={() => {
+        Keyboard.dismiss();
         onSelect?.({
           name,
           callingCode,
           countryInitials,
           region,
           subregion,
-        })
-      }
+        });
+      }}
     >
       {isFlagVisible && <Image source={{ uri: flag }} style={styles.flag} />}
       <Text style={countryListStyle}>
@@ -44,4 +45,4 @@ const CountryRow = ({
   );
 };
 
-export default CountryRow;
+export default memo(CountryRow);
