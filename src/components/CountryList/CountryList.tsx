@@ -39,7 +39,7 @@ const renderEmptyComponent = ({
   emptyContainerStyles,
   renderCustomEmptyComponent,
 }: EmptyComponentProps) => {
-  if (renderCustomEmptyComponent) return renderCustomEmptyComponent;
+  if (renderCustomEmptyComponent) return renderCustomEmptyComponent();
   return (
     <View style={[styles.emptyContainer, emptyContainerStyles]}>
       <Text style={[styles.emptyText, emptyTextStyle]}>{emptyText}</Text>
@@ -58,7 +58,7 @@ const CountryList = ({
   isVisible,
   isFlagVisible,
   isAlphabetsVisible = false,
-  countryListTitleStyle = {},
+  countryListTitleStyle,
   customRowStyle,
   customAlphabetsStyles,
   customAlphabetContainerStyles,
