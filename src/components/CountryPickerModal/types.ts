@@ -1,10 +1,15 @@
 import type React from 'react';
-import type { TextInputProps } from 'react-native';
+import type {
+  StyleProp,
+  TextInputProps,
+  TextStyle,
+  ViewStyle,
+} from 'react-native';
 import type { CustomButtonProps } from '../CloseButton';
 
 export interface FunctionProps {
   setFilterString: React.Dispatch<React.SetStateAction<string>>;
-  filterString: string | undefined;
+  filterString?: string;
 }
 
 export interface CountryPickerModalAdditionalProps {
@@ -16,19 +21,19 @@ export interface CountryPickerModalAdditionalProps {
     setFilterString,
     filterString,
   }: FunctionProps) => JSX.Element;
-  searchHeaderInputStyle?: object | undefined;
-  isCloseButtonVisible?: boolean | undefined;
-  searchHeaderProps?: TextInputProps | undefined;
-  countryListTitleStyle?: object;
-  modalContentStyle?: object | undefined;
-  modalContainerStyle?: object | undefined;
-  customRowStyle?: object | undefined;
-  customAlphabetsStyles?: object | undefined;
-  customAlphabetContainerStyles?: object | undefined;
+  searchHeaderInputStyle?: StyleProp<ViewStyle>;
+  isCloseButtonVisible?: boolean;
+  searchHeaderProps?: TextInputProps;
+  countryListTitleStyle?: StyleProp<TextStyle>;
+  modalContentStyle?: StyleProp<ViewStyle>;
+  modalContainerStyle?: StyleProp<ViewStyle>;
+  customRowStyle?: StyleProp<ViewStyle>;
+  customAlphabetsStyles?: StyleProp<TextStyle>;
+  customAlphabetContainerStyles?: StyleProp<ViewStyle>;
   emptyText?: string;
-  emptyTextStyle?: object | undefined;
-  emptyContainerStyles?: object | undefined;
-  renderCustomEmptyComponent?: React.ReactNode | undefined;
+  emptyTextStyle?: StyleProp<TextStyle>;
+  emptyContainerStyles?: StyleProp<ViewStyle>;
+  renderCustomEmptyComponent?: () => JSX.Element;
   customCloseButton?: () => JSX.Element;
   renderSearchInputClear?: ({ setFilterString }: FunctionProps) => JSX.Element;
 }

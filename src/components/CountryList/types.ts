@@ -1,3 +1,4 @@
+import type { StyleProp, TextStyle, ViewStyle } from 'react-native';
 import type {
   Country,
   CountryPickerModalAdditionalProps,
@@ -6,8 +7,8 @@ import type { OnSelectProps } from '../CountryRow';
 
 export interface EmptyComponentProps {
   emptyText?: string;
-  emptyTextStyle?: object | undefined;
-  emptyContainerStyles?: object | undefined;
+  emptyTextStyle?: StyleProp<TextStyle>;
+  emptyContainerStyles?: StyleProp<ViewStyle>;
   renderCustomEmptyComponent?: any;
 }
 export interface CountryListProps
@@ -24,5 +25,5 @@ export interface HeightProps {
 export interface LetterProps extends CountryPickerModalAdditionalProps {
   letter: string;
   scrollTo(letter: string): void;
-  customRowStyle?: object | undefined;
+  customRowStyle?: StyleProp<ViewStyle>;
 }

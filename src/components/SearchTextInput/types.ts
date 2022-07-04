@@ -1,4 +1,5 @@
 import type { Dispatch, SetStateAction } from 'react';
+import type { StyleProp, TextInputProps, ViewStyle } from 'react-native';
 import type { FunctionProps } from '../CountryPickerModal/types';
 
 export interface ClearButtonProps {
@@ -9,6 +10,6 @@ export interface ClearButtonProps {
 export interface SearchTextInputProps extends ClearButtonProps {
   filterString?: string;
   headerSearchPlaceholder?: string;
-  searchHeaderInputStyle?: object | undefined;
-  searchHeaderProps?: object | undefined;
+  searchHeaderInputStyle?: StyleProp<ViewStyle>;
+  searchHeaderProps?: TextInputProps;
 }

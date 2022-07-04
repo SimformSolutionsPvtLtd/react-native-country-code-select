@@ -1,6 +1,6 @@
-import type { ImageSourcePropType } from 'react-native';
+import type { ImageSourcePropType, ImageStyle, StyleProp } from 'react-native';
 export interface CustomButtonProps {
   onClose: Function;
-  customBackImageSource?: ImageSourcePropType | undefined;
-  customBackImageStyle?: object;
+  customBackImageSource?: ImageSourcePropType;
+  customBackImageStyle?: StyleProp<ImageStyle>;
 }
