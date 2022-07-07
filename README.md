@@ -164,38 +164,38 @@ const styles = StyleSheet.create({
 
 ## Methods
 
-> | Name           | Description                                                        |
-> | :------------- | :----------------------------------------------------------------- |
-> | **onClose\***  | Close modal callback function                                      |
-> | **onSelect\*** | Select country callback function that returns the selected country |
+> | Name           | Default | Type     | Description                                                        |
+> | :------------- | :------ | :------- | :----------------------------------------------------------------- |
+> | **onClose\***  | -       | function | Close modal callback function                                      |
+> | **onSelect\*** | -       | function | Select country callback function that returns the selected country |
 
 ## Props
 
-> | Name                          |             Default Value             | Description                                                 |
-> | :---------------------------- | :-----------------------------------: | :---------------------------------------------------------- |
-> | **\*isVisible\*\***           |                 false                 | Hide / show country list modal                              |
-> | customBackImageSource         |                 Image                 | Custom close modal image source                             |
-> | customBackImageStyle          |                  {}                   | Close modal image style                                     |
-> | isFlagVisible                 |                 true                  | If false, Country flag will be hidden                       |
-> | isAlphabetsVisible            |                 true                  | If false, Quick country fliter will be hidden               |
-> | headerSearchPlaceholder       |            "Enter Country"            | Custom search placeholder text                              |
-> | isSearchInputVisible          |                 true                  | If false, Search input will be hidden                       |
-> | renderCustomSearchInput       |                   -                   | Render custom search input                                  |
-> | searchHeaderInputStyle        |                  {}                   | Search input style                                          |
-> | isCloseButtonVisible          |                 false                 | If true, Modal close button will be visible                 |
-> | searchHeaderProps             |                  {}                   | Search input props                                          |
-> | countryListTitleStyle         |                  {}                   | Country name / title style                                  |
-> | modalContentStyle             |                  {}                   | Modal content style                                         |
-> | modalContainerStyle           |                  {}                   | Modal container style                                       |
-> | customRowStyle                |                  {}                   | Country list item / row style                               |
-> | customAlphabetsStyles         |                  {}                   | Quick filter (A-Z) text style                               |
-> | customAlphabetContainerStyles |                  {}                   | Quick filter (A-Z) container style                          |
-> | emptyText                     | `Oops, there is no country available` | Custom message to show when there's no search result found  |
-> | emptyTextStyle                |                  {}                   | Custom empty message style                                  |
-> | emptyContainerStyles          |                  {}                   | Custom empty message container style                        |
-> | renderCustomEmptyComponent    |                   -                   | Render custom component when there's no search result found |
-> | customCloseButton             |                   -                   | Render custom modal close button                            |
-> | renderSearchInputClear        |                   -                   | Render custom cancel image in search input                  |
+> | Name                          |                Default                | Type                | Description                                                 |
+> | :---------------------------- | :-----------------------------------: | :------------------ | ----------------------------------------------------------- |
+> | **isVisible\***               |                 false                 | boolean             | Hide / show country list modal                              |
+> | customBackImageSource         |                 Image                 | ImageSourcePropType | Custom close modal image source                             |
+> | customBackImageStyle          |                  {}                   | ImageStyle          | Close modal image style                                     |
+> | isFlagVisible                 |                 true                  | boolean             | If false, Country flag will be hidden                       |
+> | isAlphabetsVisible            |                 true                  | boolean             | If false, Quick country fliter will be hidden               |
+> | headerSearchPlaceholder       |            "Enter Country"            | string              | Custom search placeholder text                              |
+> | isSearchInputVisible          |                 true                  | boolean             | If false, Search input will be hidden                       |
+> | renderCustomSearchInput       |                   -                   | function            | Render custom search input                                  |
+> | searchHeaderInputStyle        |                  {}                   | ViewStyle           | Search input style                                          |
+> | isCloseButtonVisible          |                 false                 | boolean             | If true, Modal close button will be visible                 |
+> | searchHeaderProps             |                  {}                   | TextInputProps      | Search input props                                          |
+> | countryListTitleStyle         |                  {}                   | TextStyle           | Country name / title style                                  |
+> | modalContentStyle             |                  {}                   | ViewStyle           | Modal content style                                         |
+> | modalContainerStyle           |                  {}                   | ViewStyle           | Modal container style                                       |
+> | customRowStyle                |                  {}                   | ViewStyle           | Country list item / row style                               |
+> | customAlphabetsStyles         |                  {}                   | TextStyle           | Quick filter (A-Z) text style                               |
+> | customAlphabetContainerStyles |                  {}                   | ViewStyle           | Quick filter (A-Z) container style                          |
+> | emptyText                     | `Oops, there is no country available` | string              | Custom message to show when there's no search result found  |
+> | emptyTextStyle                |                  {}                   | TextStyle           | Custom empty message style                                  |
+> | emptyContainerStyles          |                  {}                   | ViewStyle           | Custom empty message container style                        |
+> | renderCustomEmptyComponent    |                   -                   | function            | Render custom component when there's no search result found |
+> | customCloseButton             |                   -                   | function            | Render custom modal close button                            |
+> | renderSearchInputClear        |                   -                   | function            | Render custom cancel image in search input                  |
 
 ---
 
