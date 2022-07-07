@@ -2,7 +2,7 @@
 
 # react-native-country-code-select
 
-[![npm version](https://img.shields.io/badge/npm%20package-0.0.1-orange)](https://www.npmjs.org/package/react-native-country-code-select) [![Android](https://img.shields.io/badge/Platform-Android-green?logo=android)](https://www.android.com) [![iOS](https://img.shields.io/badge/Platform-iOS-green?logo=apple)](https://developer.apple.com/ios) [![MIT](https://img.shields.io/badge/License-MIT-green)](https://opensource.org/licenses/MIT)
+[![npm version](https://img.shields.io/badge/npm%20package-0.0.2-orange)](https://www.npmjs.org/package/react-native-country-code-select) [![Android](https://img.shields.io/badge/Platform-Android-green?logo=android)](https://www.android.com) [![iOS](https://img.shields.io/badge/Platform-iOS-green?logo=apple)](https://developer.apple.com/ios) [![MIT](https://img.shields.io/badge/License-MIT-green)](https://opensource.org/licenses/MIT)
 
 ---
 
@@ -55,6 +55,18 @@ export default const App = () => {
 }
 ```
 
+> Note: Make sure to add Reanimated's babel plugin to your `babel.config.js`
+
+```bash
+  module.exports = {
+      ...
+      plugins: [
+          ...
+          'react-native-reanimated/plugin',
+      ],
+  };
+```
+
 ##### Know more about [react-native-gesture-handler](https://www.npmjs.com/package/react-native-gesture-handler), [react-native-reanimated](https://www.npmjs.com/package/react-native-reanimated)
 
 ---
@@ -77,7 +89,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { CountryPickerModal } from 'react-native-country-code-select';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
-export default const App = () => {
+const App = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedValue, setSelectedValue] = useState({});
   return (
@@ -90,24 +102,26 @@ export default const App = () => {
         <TouchableOpacity
           activeOpacity={0.8}
           style={styles.selectCountryButton}
-          onPress={() => setIsVisible(oldStatus => !oldStatus)}
+          onPress={() => setIsVisible((oldStatus) => !oldStatus)}
         >
           <Text style={styles.selectCountry}>Select Country</Text>
         </TouchableOpacity>
         <CountryPickerModal
           isVisible={isVisible}
           onClose={() => setIsVisible(false)}
-          {...{onSelect: setSelectedValue}}
+          {...{ onSelect: setSelectedValue }}
         />
       </View>
     </GestureHandlerRootView>
   );
 };
 
+export default App;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#e6d7b8'
+    backgroundColor: '#e6d7b8',
   },
   textView: {
     width: '60%',
@@ -117,7 +131,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     overflow: 'hidden',
     color: '#ffffff',
-    fontWeight: '500'
+    fontWeight: '500',
   },
   viewStyle: {
     justifyContent: 'center',
@@ -135,14 +149,14 @@ const styles = StyleSheet.create({
   selectCountry: {
     color: '#ffffff',
     fontWeight: 'bold',
-    fontSize: 16
+    fontSize: 16,
   },
   separator: {
     marginVertical: 20,
     letterSpacing: 2,
     fontSize: 15,
-    fontWeight: 'bold'
-  }
+    fontWeight: 'bold',
+  },
 });
 ```
 
@@ -164,14 +178,14 @@ const styles = StyleSheet.create({
 
 ## Methods
 
-> | Name           | Default | Type     | Description                                                        |
+> | Name           | Default | Type     | <div style="width:290px">Description</div>                         |
 > | :------------- | :------ | :------- | :----------------------------------------------------------------- |
 > | **onClose\***  | -       | function | Close modal callback function                                      |
 > | **onSelect\*** | -       | function | Select country callback function that returns the selected country |
 
 ## Props
 
-> | Name                          |                Default                | Type                | Description                                                 |
+> | Name                          |                Default                | Type                | <div style="width:290px">Description</div>                  |
 > | :---------------------------- | :-----------------------------------: | :------------------ | ----------------------------------------------------------- |
 > | **isVisible\***               |                 false                 | boolean             | Hide / show country list modal                              |
 > | customBackImageSource         |                 Image                 | ImageSourcePropType | Custom close modal image source                             |
