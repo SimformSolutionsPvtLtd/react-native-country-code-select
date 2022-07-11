@@ -10,7 +10,6 @@ export default StyleSheet.create({
   },
   headerContainer: {
     flexDirection: 'row',
-    height: verticalScale(55),
   },
   headerTitleContainer: {
     flex: 1,
