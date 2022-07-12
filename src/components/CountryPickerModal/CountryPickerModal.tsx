@@ -39,6 +39,8 @@ export const CountryPickerModal = ({
   renderCustomEmptyComponent,
   customCloseButton,
   renderSearchInputClear,
+  handleStyle = {},
+  handleComponent,
 }: CountryPickerModalProps) => {
   const [countries, setCountries] = useState<Country[]>([]);
   const [filterString, setFilterString] = useState<string>('');
@@ -60,9 +62,10 @@ export const CountryPickerModal = ({
       setFilterString('');
     }
   }, [isVisible]);
-
   return (
-    <CustomModal {...{ onClose, modalContainerStyle }}>
+    <CustomModal
+      {...{ onClose, modalContainerStyle, handleStyle, handleComponent }}
+    >
       <SafeAreaView style={[styles.container, modalContentStyle]}>
         <Header
           onClose={onClose}

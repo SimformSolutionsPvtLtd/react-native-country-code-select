@@ -1,6 +1,6 @@
 {
   "name": "react-native-country-code-select",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React Native component to select a country code",
   "homepage": "https://github.com/SimformSolutionsPvtLtd/react-native-country-code-select#readme",
   "main": "lib/index.js",

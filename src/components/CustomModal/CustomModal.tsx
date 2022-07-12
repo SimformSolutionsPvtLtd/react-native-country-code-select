@@ -12,6 +12,8 @@ const CustomModal = ({
   children,
   onClose,
   modalContainerStyle,
+  handleStyle,
+  handleComponent,
 }: CustomModalProps) => {
   const { gestureHandler, animatedBottomStyle, toggleModal } = useCustomModal({
     onClose,
@@ -32,8 +34,9 @@ const CustomModal = ({
 
   return (
     <GestureDetector gesture={gestureHandler}>
-      <Animated.View style={[topViewStyles, animatedBottomStyle]}>
-        <View style={styles.line} />
+      <Animated.View style={[animatedBottomStyle, topViewStyles]}>
+        {handleComponent && handleComponent()}
+        {!handleComponent && <View style={[styles.line, handleStyle]} />}
         {children}
       </Animated.View>
     </GestureDetector>

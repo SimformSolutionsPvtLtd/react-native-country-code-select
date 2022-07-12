@@ -14,8 +14,8 @@ export default StyleSheet.create({
   },
   emptyContainer: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
+    marginTop: verticalScale(90),
   },
   emptyText: {
     fontSize: moderateScale(18),
