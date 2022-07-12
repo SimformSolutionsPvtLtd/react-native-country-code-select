@@ -7,6 +7,8 @@ export interface onCloseModalProps {
 export interface CustomModalProps extends onCloseModalProps {
   children: React.ReactNode;
   modalContainerStyle?: StyleProp<ViewStyle>;
+  handleStyle?: StyleProp<ViewStyle>;
+  handleComponent?: () => JSX.Element;
 }
 export interface CustomModalRefProps {
   toggleModal: (isVisible: boolean) => void;

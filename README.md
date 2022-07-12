@@ -2,7 +2,7 @@
 
 # react-native-country-code-select
 
-[![npm version](https://img.shields.io/badge/npm%20package-0.0.2-orange)](https://www.npmjs.org/package/react-native-country-code-select) [![Android](https://img.shields.io/badge/Platform-Android-green?logo=android)](https://www.android.com) [![iOS](https://img.shields.io/badge/Platform-iOS-green?logo=apple)](https://developer.apple.com/ios) [![MIT](https://img.shields.io/badge/License-MIT-green)](https://opensource.org/licenses/MIT)
+[![npm version](https://img.shields.io/badge/npm%20package-0.0.3-orange)](https://www.npmjs.org/package/react-native-country-code-select) [![Android](https://img.shields.io/badge/Platform-Android-green?logo=android)](https://www.android.com) [![iOS](https://img.shields.io/badge/Platform-iOS-green?logo=apple)](https://developer.apple.com/ios) [![MIT](https://img.shields.io/badge/License-MIT-green)](https://opensource.org/licenses/MIT)
 
 ---
 
@@ -68,6 +68,14 @@ export default const App = () => {
 ```
 
 ##### Know more about [react-native-gesture-handler](https://www.npmjs.com/package/react-native-gesture-handler), [react-native-reanimated](https://www.npmjs.com/package/react-native-reanimated)
+
+---
+
+## Compatibility
+
+---
+
+Only supports `react-native` `0.62+`
 
 ---
 
@@ -210,6 +218,8 @@ const styles = StyleSheet.create({
 > | renderCustomEmptyComponent    |                   -                   | function            | Render custom component when there's no search result found |
 > | customCloseButton             |                   -                   | function            | Render custom modal close button                            |
 > | renderSearchInputClear        |                   -                   | function            | Render custom cancel image in search input                  |
+> | handleStyle                   |                  {}                   | ViewStyle           | View style to be applied to the handle bar component        |
+> | handleComponent               |                   -                   | function            | Render custom handle bar component                          |
 
 ---
 

@@ -36,6 +36,8 @@ export interface CountryPickerModalAdditionalProps {
   renderCustomEmptyComponent?: () => JSX.Element;
   customCloseButton?: () => JSX.Element;
   renderSearchInputClear?: ({ setFilterString }: FunctionProps) => JSX.Element;
+  handleStyle?: StyleProp<ViewStyle>;
+  handleComponent?: () => JSX.Element;
 }
 
 export interface CountryPickerModalProps
